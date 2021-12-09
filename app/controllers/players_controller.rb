@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
     end
     
     def create
-        player = @current_user.teams.players.create!(params)
+        player = @current_user.teams.players.create!(team_params)
         render json: team, status: :created
     end
     
@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
 
     private
 
-    def params
+    def team_params
         params.permit(:name, :jersey_num, :points, :assists, :rebounds, :turnovers, :fouls, :blocks, :steals, :fg_a, :fg_m, :threept_a, :threept_m, :min_played)
     end
 end

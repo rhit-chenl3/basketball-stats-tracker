@@ -38,7 +38,7 @@ export default function LoginPage({ onLogin }) {
   }
 
   return (
-      <div className="Login">
+    <div className="Login">
       <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="username">
           <Form.Label>Username</Form.Label>
@@ -67,6 +67,6 @@ export default function LoginPage({ onLogin }) {
             ))}
           </Form.Group>
       </Form>
-      </div>
+    </div>
   );
 }

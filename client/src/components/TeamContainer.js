@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import TeamCard from './TeamCard';
+import { useHistory } from "react-router-dom";
+
+
 
 
 export default function TeamContainer() {
+    let history = useHistory();
     const [teams, setTeams] = useState([]);
 
     useEffect(() => {
@@ -21,7 +25,7 @@ export default function TeamContainer() {
             ) : (
                 <>
                     <h5>No Teams Found</h5>
-                    <button>Make a New Team</button>
+                    <button onClick={() => history.push("/newteam")}>Make a New Team</button>
                 </>
                 
             )}

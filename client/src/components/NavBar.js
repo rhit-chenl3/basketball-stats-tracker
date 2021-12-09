@@ -27,7 +27,12 @@ function NavBar({ user, setUser }) {
         <Navbar.Collapse className="justify-content-end">
           <Nav activeKey={window.location.pathname}>
           {user ? (
-            <Nav.Link onClick={handleLogoutClick}>Logout</Nav.Link>
+            <>
+              <LinkContainer to="/newteam">
+                <Nav.Link>New Team</Nav.Link>
+              </LinkContainer>
+              <Nav.Link onClick={handleLogoutClick}>Logout</Nav.Link>
+            </>
           ) : (
           <>
             <LinkContainer to="/signup">
