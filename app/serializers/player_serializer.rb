@@ -1,4 +1,4 @@
 class PlayerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :jersey_number, :points, :assists, :rebounds, :turnovers, :fouls, :blocks, :steals, :fga, :fgm, :"3pta", :"3ptm", :min_played
+  attributes :id, :name, :jersey_num, :points, :assists, :rebounds, :turnovers, :fouls, :blocks, :steals, :fg_a, :fg_m, :threept_a, :threept_m, :min_played
   has_one :team
 end
