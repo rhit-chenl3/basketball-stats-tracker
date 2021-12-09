@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import "../index.css";
 
-export default function NewPlayer() {
+export default function NewPlayer( {user}) {
     const [name, setName] = useState("");
     const [jerseynum, setJerseynum] = useState("");
     const [errors, setErrors] = useState([]);
@@ -23,7 +23,7 @@ export default function NewPlayer() {
           },
           body: JSON.stringify({
             name,
-            jersey_num: jerseynum,
+            jersey_num: parseInt(jerseynum),
             points: 0,
             assists: 0,
             rebounds: 0,
@@ -34,7 +34,8 @@ export default function NewPlayer() {
             fg_m: 0,
             threept_a: 0,
             threept_m: 0,
-            min_played: 0
+            min_played: 0,
+            picture_url: ""
           }),
         }).then((r) => {
           setIsLoading(false);

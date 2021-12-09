@@ -2,13 +2,15 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
+import { useHistory } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
-
+  let history = useHistory();
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        setUser(null);
+        setUser(null)
+        history.push("/");
       }
     });
   }

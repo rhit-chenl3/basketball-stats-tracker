@@ -8,8 +8,8 @@ class PlayersController < ApplicationController
     end
     
     def create
-        player = @current_user.teams.players.create!(team_params)
-        render json: team, status: :created
+        player = @current_user.players.create!(team_params)
+        render json: player, status: :created
     end
     
     def update

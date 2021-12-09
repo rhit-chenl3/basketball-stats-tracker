@@ -7,7 +7,7 @@ import Alert from "react-bootstrap/Alert";
 import "../index.css";
 
 
-export default function NewTeam() {
+export default function NewTeam( {user} ) {
     const [name, setName] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);

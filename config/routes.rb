@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :teams, only: [:index, :create]
-  resources :players, only: [:index, :create]
+  resources :teams
+  resources :players
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"

@@ -13,7 +13,7 @@ export default function HomePage({user}) {
                 {user ? (
                     <>
                         <div>Welcome, {user.username}!</div>
-                        <TeamContainer/>
+                        <TeamContainer user={user}/>
                     </>
                         
                     ) : (

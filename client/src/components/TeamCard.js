@@ -8,37 +8,28 @@ export default function TeamCard({team}) {
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
-        fetch("/players")
+        fetch("/me")
         .then((r) => r.json())
-        .then(setPlayers);
+        .then((user) => setPlayers(user.players));
     }, []);
-    // function handleShowPlayers(){
-    //     {players.length > 0 ? (
-    //         players.map((player) => (
-    //             <PlayerCard player={player} />
-    //         ))
-    //     ) : (
-    //         <>
-    //             <h5>No Players Found</h5>
-    //             <button onClick={() => history.push("/newplayer")}>Add Players</button>
-    //         </>
-            
-    //     )}
-    // }
-    return (
+
+    return players && team ? (
         <div className="TeamCard">
             <br></br>
             <h3>{team.name}</h3>
             {players.length > 0 ? (
-                players.map((player) => (
-                    <PlayerCard player={player} />
-                ))
+                <>
+                    {players.map((player) => (
+                        <PlayerCard player={player} key={player.id}/>
+                    ))}
+                </>
+                
             ) : (
                 <>
-                    <h5>No Players Found</h5>
+                    <h6>No Players Found</h6>
                     <button onClick={() => history.push("/newplayer")}>Add Players</button>
                 </>
             )}
         </div>
-    )
+    ) : (null);
 }
