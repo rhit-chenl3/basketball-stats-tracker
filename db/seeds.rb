@@ -8,18 +8,22 @@
 puts"lets get rid of the old stuff first"
 Player.destroy_all
 Team.destroy_all
+User.destroy_all
+User.reset_pk_sequence
 Player.reset_pk_sequence
 Team.reset_pk_sequence
 puts "Lets get started"
-Boston_Celtics = Team.create(name:"Boston Celtics")
-Brooklyn_Nets =Team.create(name:"Brooklyn Nets")
-New_York_Knicks =Team.create(name:"New York Knicks")
-Philadelphia_76ers =Team.create(name:"Philadelphia 76ers")
-Toronto_Raptors =Team.create(name:"Toronto Raptors")
-Chicago_Bulls =Team.create(name:"Chicago Bulls")
-Miami_Heat =Team.create(name:"Miami Heat")
-Golden_State_Warriors =Team.create(name:"Golden State Warriors")
-Los_Angeles_Lakers =Team.create(name:"Los Angeles Lakers")
+nba_user = User.create(username:"nba", password_digest:"nba")
+puts "nba user!"
+Boston_Celtics = Team.create(name:"Boston Celtics", user_id:nba_user.id)
+Brooklyn_Nets =Team.create(name:"Brooklyn Nets", user_id:nba_user.id)
+New_York_Knicks =Team.create(name:"New York Knicks", user_id:nba_user.id)
+Philadelphia_76ers =Team.create(name:"Philadelphia 76ers", user_id:nba_user.id)
+Toronto_Raptors =Team.create(name:"Toronto Raptors", user_id:nba_user.id)
+Chicago_Bulls =Team.create(name:"Chicago Bulls", user_id:nba_user.id)
+Miami_Heat =Team.create(name:"Miami Heat", user_id:nba_user.id)
+Golden_State_Warriors =Team.create(name:"Golden State Warriors", user_id:nba_user.id)
+Los_Angeles_Lakers =Team.create(name:"Los Angeles Lakers", user_id:nba_user.id)
 puts "We have teams!"
 Jaylen_Brown=Player.create(team_id:Boston_Celtics.id,name:"Jaylen Brown",jersey_num:7,points:0,assists:0,rebounds:0,turnovers:0,fouls:0,blocks:0,steals:0,fg_a:0,fg_m:0,threept_a:0,threept_m:0,min_played:0)
 Bruno_Fernando=Player.create(team_id:Boston_Celtics.id,name:"Bruno Fernando",jersey_num:28,points:0,assists:0,rebounds:0,turnovers:0,fouls:0,blocks:0,steals:0,fg_a:0,fg_m:0,threept_a:0,threept_m:0,min_played:0)
