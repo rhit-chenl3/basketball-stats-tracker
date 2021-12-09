@@ -3,6 +3,8 @@ import NavBar from "./NavBar"
 import HomePage from "./HomePage";
 import SignUpPage from "./SignUpPage";
 import LoginPage from "./LoginPage";
+import NewPlayer from "./NewPlayer";
+import NewTeam from "./NewTeam";
 import NotFound from "./NotFound";
 import { Route, Switch } from "react-router-dom";
 import "../App.css";
@@ -32,6 +34,12 @@ function App() {
                 </Route>
                 <Route exact path="/signup">
                     <SignUpPage onLogin={setUser}/>
+                </Route>
+                <Route exact path="/newteam">
+                    <NewTeam user={user}/>
+                </Route>
+                <Route exact path="/newplayer">
+                    <NewPlayer user={user}/>
                 </Route>
                 <Route>
                     <NotFound />
