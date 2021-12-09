@@ -3,6 +3,7 @@ class CreatePlayers < ActiveRecord::Migration[6.1]
     create_table :players do |t|
       t.belongs_to :team, null: false, foreign_key: true
       t.string :name
+      t.string :picture_url
       t.integer :jersey_num
       t.integer :points
       t.integer :assists
