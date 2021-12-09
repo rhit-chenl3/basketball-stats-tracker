@@ -23,6 +23,6 @@ class PlayersController < ApplicationController
     private
 
     def team_params
-        params.permit(:name, :jersey_num, :points, :assists, :rebounds, :turnovers, :fouls, :blocks, :steals, :fg_a, :fg_m, :threept_a, :threept_m, :min_played)
+        params.permit(:name, :jersey_num, :points, :assists, :rebounds, :turnovers, :fouls, :blocks, :steals, :fg_a, :fg_m, :threept_a, :threept_m, :min_played, :picture_url)
     end
 end

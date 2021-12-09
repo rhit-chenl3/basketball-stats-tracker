@@ -17,19 +17,14 @@ export default function TeamCard({team}) {
         <div className="TeamCard">
             <br></br>
             <h3>{team.name}</h3>
-            {players.length > 0 ? (
-                <>
-                    {players.map((player) => (
-                        <PlayerCard player={player} key={player.id}/>
-                    ))}
-                </>
-                
-            ) : (
-                <>
-                    <h6>No Players Found</h6>
-                    <button onClick={() => history.push("/newplayer")}>Add Players</button>
-                </>
-            )}
+            <button onClick={() => history.push("/newplayer")}>Add Player</button>
+            
+            {players.map((player) => (
+                <PlayerCard player={player} key={player.id}/>
+            ))}
+            
+            
+            
         </div>
     ) : (null);
 }

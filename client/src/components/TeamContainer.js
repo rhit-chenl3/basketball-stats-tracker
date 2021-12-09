@@ -14,7 +14,8 @@ export default function TeamContainer({user}) {
         .then((r) => r.json())
         .then((user) => setTeams(user.teams));
     }, []);
-    console.log(teams)
+
+
     return (
         <div className="TeamContainer">
             <br></br>
@@ -24,7 +25,7 @@ export default function TeamContainer({user}) {
                 ))
             ) : (
                 <>
-                    <h5>No Teams Found</h5>
+                    <h5>No Team Found</h5>
                     <button onClick={() => history.push("/newteam")}>Make a New Team</button>
                 </>
                 

@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_193859) do
   enable_extension "plpgsql"
 
   create_table "players", force: :cascade do |t|
-    t.bigint "team_id", null: false
     t.string "name"
     t.string "picture_url"
     t.integer "jersey_num"
@@ -35,7 +34,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_193859) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -53,6 +51,5 @@ ActiveRecord::Schema.define(version: 2021_12_09_193859) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "players", "teams"
   add_foreign_key "teams", "users"
 end
