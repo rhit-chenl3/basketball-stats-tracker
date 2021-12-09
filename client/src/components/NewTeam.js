@@ -16,7 +16,7 @@ export default function NewTeam() {
     function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
-        fetch("/teams", {
+        fetch("/User_Team", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
