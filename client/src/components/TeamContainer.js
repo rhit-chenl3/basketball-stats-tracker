@@ -16,7 +16,7 @@ export default function TeamContainer() {
     }, []);
 
     return (
-        <div className="Team">
+        <div className="TeamContainer">
             <br></br>
             {teams.length > 0 ? (
                 teams.map((team) => (
