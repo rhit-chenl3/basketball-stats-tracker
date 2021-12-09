@@ -53,16 +53,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_193859) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users_teams", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "player_id"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_users_teams_on_user_id"
-  end
-
   add_foreign_key "players", "teams"
   add_foreign_key "teams", "users"
-  add_foreign_key "users_teams", "users"
 end

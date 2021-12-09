@@ -34,8 +34,7 @@ export default function NewPlayer( {user}) {
             fg_m: 0,
             threept_a: 0,
             threept_m: 0,
-            min_played: 0,
-            picture_url: ""
+            min_played: 0
           }),
         }).then((r) => {
           setIsLoading(false);
