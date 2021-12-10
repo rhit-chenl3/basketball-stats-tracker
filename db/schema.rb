@@ -15,26 +15,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_193859) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "arbiters", force: :cascade do |t|
-    t.string "name"
-    t.integer "hourly_cost"
-    t.string "email"
-    t.string "phone"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "courts", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.integer "time"
-    t.integer "charge_per_hour"
-    t.integer "team_id"
-    t.integer "arbiter_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "picture_url"

@@ -13,17 +13,28 @@ export default function TeamCard({team}) {
         .then((user) => setPlayers(user.players));
     }, []);
 
+    function handleDelete(id) {
+        fetch(`/players/${id}`, {
+            method: 'DELETE',
+        }).then((r) => {
+            if (r.ok) {
+                setPlayers((players) =>
+                    players.filter((player) => player.id !== id)
+                );
+                console.log("player deleted!")
+            }
+        })
+    }
+
     return players && team ? (
         <div className="TeamCard">
             <br></br>
             <h3>{team.name}</h3>
             <button onClick={() => history.push("/newplayer")}>Add Player</button>
-            
+
             {players.map((player) => (
-                <PlayerCard player={player} key={player.id}/>
+                <PlayerCard player={player} key={player.id} handleDelete={handleDelete}/>
             ))}
-            
-            
             
         </div>
     ) : (null);
