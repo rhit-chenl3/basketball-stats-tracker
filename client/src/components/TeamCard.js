@@ -21,7 +21,7 @@ export default function TeamCard({team}) {
                 setPlayers((players) =>
                     players.filter((player) => player.id !== id)
                 );
-                console.log("player deleted!")
+                alert("player deleted!")
             }
         })
     }
@@ -31,10 +31,41 @@ export default function TeamCard({team}) {
             <br></br>
             <h3>{team.name}</h3>
             <button onClick={() => history.push("/newplayer")}>Add Player</button>
-
-            {players.map((player) => (
-                <PlayerCard player={player} key={player.id} handleDelete={handleDelete}/>
-            ))}
+            <div className="app-container">
+                <table> 
+                <thead>
+                <tr>
+                <th> Player Name</th>
+                <th> Jersey Number</th>
+                <th> Points </th>
+                <th> Assists </th>
+                <th> Rebounds</th>
+                <th> Turnovers</th>
+                <th> Fouls_P</th>
+                <th> Blocks</th>
+                <th> Steals</th>
+                <th> FG_Attempts</th>
+                <th> FG_Made</th>
+                <th> 3Pt_Attempts</th>
+                <th> 3Pt_Made</th>
+                <th> Minutes Played</th>
+                <th> Player Image</th>
+                <th> Actions</th>
+    
+                </tr>
+                </thead>
+                <tbody>
+                
+                    {players.map((player) => (
+                
+                        <PlayerCard player={player} key={player.id} handleDelete={handleDelete}/>
+                    ))}
+                
+                </tbody>
+                </table> 
+    
+                </div>
+            
             
         </div>
     ) : (null);

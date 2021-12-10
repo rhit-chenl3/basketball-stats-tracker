@@ -8,7 +8,7 @@ export default function HomePage({user}) {
         <div className="Home">
             <div className="lander">
                 <h1>Statracker</h1>
-                <p className="text-muted">Easily track your school's basketball team stats!</p>
+                <p className="text-muted">Easily track your basketball team's stats!</p>
                 {/* user = true => page functionality, false => none */}
                 {user ? (
                     <>
